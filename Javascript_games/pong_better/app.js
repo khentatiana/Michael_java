@@ -1,4 +1,4 @@
-const INITIAL_BALL_SPEED = 3;
+const INITIAL_BALL_SPEED = 10;
 const BALL_RADIUS = 20;
 
 const PADDLE_WIDTH = 10;

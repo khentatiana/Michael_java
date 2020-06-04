@@ -1,0 +1,44 @@
+body {
+    background: #000;
+    text-align: center;
+    color: #fff;
+    height: 100%;
+}
+
+.bar-wrapper {
+    height: 300px;
+    position: relative;
+}
+.bar {
+    position: relative;
+    bottom: 0;
+    width: 5px;
+    display: inline-block;
+    border: 1px solid red;
+    height: 5px;
+    border-bottom: 3px solid #fff;
+}
+
+canvas {
+    top: 50%;
+    align-items: center;
+}
+
+button {
+    height: 50px;
+    width: 50px;
+    background-size: contain;
+    border-radius: 50%;
+}
+
+.pause-play {
+    background-image: url("https://cdn2.iconfinder.com/data/icons/media-controls-5/100/play_pause-512.png");
+    user-select: none;
+}
+
+.new-song {
+    background-image: url("https://cdn4.iconfinder.com/data/icons/music-kit/32/song-512.png");
+    user-select: none;
+}
+
+
