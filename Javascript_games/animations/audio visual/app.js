@@ -3,9 +3,12 @@ window.AudioContext = window.AudioContext || window.webkitAudioContext || window
 let begin = false;
 let myButton1 = document.getElementById('play');
 let myButton2 = document.getElementById('reload')
+let myButton3 = document.getElementById('file-button');
+let songTitle = document.getElementById('name');
+
+let audio = document.getElementById('audio');
 
 let start = function() {
-    let audio = document.getElementById('audio');
     let ctx = new AudioContext();
     let analyser = ctx.createAnalyser();
     let audioSrc = ctx.createMediaElementSource(audio);
@@ -96,17 +99,38 @@ function preparation() {
         let audio = document.getElementById("audio");
         audio.src = source;
 
-        start();
-        begin = true;
-
-        audio.play();
-        audio.addEventListener("ended", function () {
-            begin = false;
-            location.reload()
-        });
+        songTitle.textContent = source;
     }
+    start();
+    begin = true;
+
+    audio.play();
+    audio.addEventListener("ended", function () {
+        begin = false;
+        location.reload()
+    });
 }
+
 
 myButton2.onclick = function() {
     location.reload();
 };
+
+
+myButton3.onclick = function() {
+    document.getElementById("file-input").click();
+}
+
+
+let file = document.getElementById("file-input");
+
+file.onchange = function() {
+    let files = this.files;
+    console.log(this.files)
+    audio.src = URL.createObjectURL(files[0]);
+    audio.load();
+    begin = true;
+    songTitle.textContent = files[0].name;
+    myButton1.click();
+};
+

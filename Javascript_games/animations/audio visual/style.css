@@ -3,6 +3,8 @@ body {
     text-align: center;
     color: #fff;
     height: 100%;
+    width: 100%;
+    user-select: none;
 }
 
 .bar-wrapper {
@@ -12,7 +14,7 @@ body {
 .bar {
     position: relative;
     bottom: 0;
-    width: 5px;
+    width: 10px;
     display: inline-block;
     border: 1px solid red;
     height: 5px;
@@ -24,21 +26,110 @@ canvas {
     align-items: center;
 }
 
+.song-name {
+    font-weight: bold;
+    font-family: "Comic Sans MS";
+}
+
 button {
     height: 50px;
     width: 50px;
     background-size: contain;
     border-radius: 50%;
+    margin: auto;
+}
+
+.buttons {
+    padding: 20px;
+    margin: auto;
+    position: relative;
+}
+
+button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+button:hover {
+    height: 60px;
+    width: 60px;
+    background-size: contain;
 }
 
 .pause-play {
     background-image: url("https://cdn2.iconfinder.com/data/icons/media-controls-5/100/play_pause-512.png");
-    user-select: none;
 }
 
 .new-song {
     background-image: url("https://cdn4.iconfinder.com/data/icons/music-kit/32/song-512.png");
-    user-select: none;
 }
 
+.file-button {
+    background-image: url("https://cdn0.iconfinder.com/data/icons/audio-controls-ui-icons/40/add-512.png");
+}
 
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+
+    height: 10px; /* Specified height */
+    position: relative;
+
+    background: rgb(118,118,118); /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.8; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+}
+
+.file-button {
+    user-select: none;
+    height: 50px;
+    width: 50px;
+    background-size: contain;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.volume-edit {
+    margin-top: 10px;
+    align-items: center;
+    horiz-align: center;
+}
+
+.slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 10px; /* Set a specific slider handle width */
+    height: 30px; /* Slider handle height */
+    background: whitesmoke; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+    width: 10px; /* Set a specific slider handle width */
+    height: 30px; /* Slider handle height */
+    background: whitesmoke; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+}
+
+#volume-image {
+    top: 8px;
+    height: 30px;
+    width: 30px;
+    background-color: #cfcfcf;
+    position: relative;
+
+    /*
+    https://cdn2.iconfinder.com/data/icons/lightly-icons/30/volume-full-480.png -> full
+    https://cdn2.iconfinder.com/data/icons/lightly-icons/30/volume-half-480.png -> half
+    https://cdn2.iconfinder.com/data/icons/lightly-icons/30/volume-low-480.png -> low
+    https://cdn2.iconfinder.com/data/icons/lightly-icons/30/volume-mute-480.png -> mute
+    */
+    background-image: url("https://cdn2.iconfinder.com/data/icons/lightly-icons/30/volume-full-480.png");
+}
