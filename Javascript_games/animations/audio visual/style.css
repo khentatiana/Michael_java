@@ -133,3 +133,7 @@ button:hover {
     */
     background-image: url("https://cdn2.iconfinder.com/data/icons/lightly-icons/30/volume-full-480.png");
 }
+
+.replay-song {
+    background-image: url("https://cdn0.iconfinder.com/data/icons/mintab-outline-for-ios-4/30/replay-reverse-play-song-clip-512.png");
+}
