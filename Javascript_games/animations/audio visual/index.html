@@ -1,61 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>Audio visualizer</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-<audio id="audio"></audio>
+    <head>
+        <title>Audio visualizer</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <audio id="audio"></audio>
 
-<h1 class="song-name" id="name">Player</h1>
+        <h1 class="song-name" id="name">Player</h1>
 
-<canvas id='canvas' width="800" height="350"></canvas>
+        <canvas id='canvas' width="800" height="350"></canvas>
 
-<div class="volume-edit">
-    <input type="range" min="0" max="100" value="100" class="slider"
-           id="myRange" oninput="setVolume(this.value)">
-    <button id="volume-image" disabled></button>
-</div>
-<div class="buttons">
-    <button class="pause-play" id="play"></button>
-    <button class="new-song" id="reload"></button>
-    <button class="file-button" id="file-button" type="submit"></button>
-    <button class="replay-song" id="replay-song"></button>
-    <input id="file-input" type="file" name="name" style="display: none;" accept="audio/*" />
-    <br>
-    <br>
-</div>
-<script src="app.js"></script>
+        <div class="volume-edit">
+            <input type="range" min="0" max="100" value="100" class="slider"
+                   id="myRange" oninput="setVolume(this.value)">
+            <button id="volume-image" disabled></button>
+        </div>
+        <div class="buttons">
+            <button class="pause-play" id="play"></button>
+            <button class="new-song" id="reload"></button>
+            <button class="file-button" id="file-button" type="submit"></button>
+            <button class="replay-song" id="replay-song"></button>
+            <input id="file-input" type="file" name="name" style="display: none;" accept="audio/*" />
+            <br>
+            <br>
+        </div>
+        <script src="app.js"></script>
 
-<script>
-    let a = document.getElementById('audio')
-    let volumeImage = document.getElementById('volume-image');
+        <script>
+            let a = document.getElementById('audio')
+            let volumeImage = document.getElementById('volume-image');
 
-    function setVolume(vol) {
-        a.volume = vol / 100;
+            function setVolume(vol) {
+                a.volume = vol / 100;
 
-        // set volume icon
-        // mute
-        volumeImage.style.backgroundImage = 'url("https://cdn2.' +
-            'iconfinder.com/data/icons/lightly-icons/30/volume-mute-480.png")';
+                // set volume icon
+                // mute
+                volumeImage.style.backgroundImage = 'url("https://cdn2.' +
+                    'iconfinder.com/data/icons/lightly-icons/30/volume-mute-480.png")';
 
-        if (vol >= 1) {
-            // low volume
-            volumeImage.style.backgroundImage = 'url("https://cdn2.' +
-                'iconfinder.com/data/icons/lightly-icons/30/volume-low-480.png")';
-        }
-        if (vol >= 41) {
-            // medium volume
-            volumeImage.style.backgroundImage = 'url("https://cdn2.' +
-                'iconfinder.com/data/icons/lightly-icons/30/volume-half-480.png")';
-        }
-        if (vol >= 75) {
-            // high volume
-            volumeImage.style.backgroundImage = 'url("https://cdn2.' +
-                'iconfinder.com/data/icons/lightly-icons/30/volume-full-480.png")';
-        }
-    }
+                if (vol >= 1) {
+                    // low volume
+                    volumeImage.style.backgroundImage = 'url("https://cdn2.' +
+                        'iconfinder.com/data/icons/lightly-icons/30/volume-low-480.png")';
+                }
+                if (vol >= 41) {
+                    // medium volume
+                    volumeImage.style.backgroundImage = 'url("https://cdn2.' +
+                        'iconfinder.com/data/icons/lightly-icons/30/volume-half-480.png")';
+                }
+                if (vol >= 75) {
+                    // high volume
+                    volumeImage.style.backgroundImage = 'url("https://cdn2.' +
+                        'iconfinder.com/data/icons/lightly-icons/30/volume-full-480.png")';
+                }
+            }
 
-</script>
-</body>
+        </script>
+    </body>
 </html>

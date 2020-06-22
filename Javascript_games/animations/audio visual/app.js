@@ -153,11 +153,3 @@ myButton4.onclick = function () {
     audio.currentTime = 0;
     audio.play();
 }
-
-class Test {
-    constructor(a) {
-        this.name = "Michael";
-        this._name = "Jhonny";
-    }
-    a = "ALex"
-}
